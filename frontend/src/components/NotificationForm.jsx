@@ -30,6 +30,7 @@ const NotificationForm = () => {
     setSuccess(false);
 
     try {
+      console.log("📩 Sent Data:", formData);
       const res = await sendNotification(formData);
       if (!res.success) throw new Error("Failed to send");
 

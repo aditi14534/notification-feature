@@ -15,6 +15,7 @@ export const sendNotification = async (req, res) => {
 
   try {
     // Send email
+    console.log("📨 Email about to send to:", email);
     await sendEmail(email, message);
     notification.emailSent = true;
 
