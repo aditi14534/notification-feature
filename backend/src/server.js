@@ -8,8 +8,14 @@ dotenv.config();
 
 const app = express();
 
-// Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: ["https://notification-feature.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
